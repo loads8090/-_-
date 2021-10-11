@@ -1,0 +1,21 @@
+from selenium import webdriver
+from fpdf import FPDF
+
+
+
+
+def get_info():
+    lis = driver.find_element_by_css_selector('.ART').text
+    with open('金翅大鹏.txt','a+',encoding = 'utf-8') as file:
+        file.write(lis)
+    print(lis)
+  
+
+driver = webdriver.Chrome()
+for i in range(150,201):
+    driver.get(f'https://yidukf.com/read_130{i}_8069.html')
+    driver.implicitly_wait(10)
+    get_info()
+    
+
+
